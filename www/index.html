@@ -23,10 +23,21 @@
                 })
         }
 
-        function searchName() {
+        function searchLevel() {
+            let level = parseInt($("#level").val());
             let TestDataClass = ncmb.DataStore(db);
-            let name = $("#name").val();
-            TestDataClass.equalTo("name", name).fetchAll()
+            TestDataClass
+                .equalTo("level", level)
+                .fetchAll()
+                .then(function(results) {
+                    showResults(results);
+                })
+        }
+
+        function searchLevel() {
+            let level = parseInt($("#level").val());
+            let TestDataClass = ncmb.DataStore(db);
+            TestDataClass.equalTo("level", level).fetchAll()
                 .then(function(results) {
                     showResults(results);
                 })
