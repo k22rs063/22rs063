@@ -66,7 +66,7 @@
         }
 
         function searchTribute() {
-            let level = parseInt($("#tribute").val());
+            let tribute = parseInt($("#tribute").val());
             let TestDataClass = ncmb.DataStore(db);
             TestDataClass.equalTo("tribute", tribute).fetchAll()
                 .then(function(results) {
