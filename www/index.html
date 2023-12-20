@@ -100,11 +100,12 @@
 
         function showResult(result) {
             // テーブルのヘッダを生成
-            let msg = "<table><tr><th>effect</th></tr>";
+            let msg = "<table><tr><th>name</th><th>effect</th></tr>";
             // テーブルのテイラを生成
             for (let j = 0; j < result.length; j++) {
                 // 各データを収めた表の列を生成
                 msg += "<tr>";
+                msg += "<td>" + result[j].name + "</td>";
                 msg += "<td class='num'>" + result[j].effect + "</td>";
                 msg += "</tr>";
             }
