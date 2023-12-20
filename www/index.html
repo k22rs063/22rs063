@@ -74,7 +74,7 @@
 
         function effect() {
             let TestDataClass = ncmb.DataStore(db);
-            TestDataClass.order("effect", false).effect()
+            TestDataClass.order("effect", false).fetchAll()
                 .then(function(result) {
                     showResult(result);
                 })
@@ -102,10 +102,10 @@
             // テーブルのヘッダを生成
             let msg = "<table><tr><th>effect</th></tr>";
             // テーブルのテイラを生成
-            for (let i = 0; i < result.length; i++) {
+            for (let j = 0; j < result.length; j++) {
                 // 各データを収めた表の列を生成
                 msg += "<tr>";
-                msg += "<td class='num'>" + result[i].effect + "</td>";
+                msg += "<td class='num'>" + result[j].effect + "</td>";
                 msg += "</tr>";
             }
             msg += "</table>";
