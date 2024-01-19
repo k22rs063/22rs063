@@ -80,6 +80,10 @@
                 })
         }
 
+        function formReset() {
+            document.$("message").reset();
+        }
+
         function showResults(results) {
             // テーブルのヘッダを生成
             let msg = "<table><tr><th>name</th><th>Lvl</th><th>attack</th><th>defence</th><th>tribute</th></tr>";
@@ -98,20 +102,6 @@
             $("#message").html(msg);
         }
 
-        function showResult(result) {
-            // テーブルのヘッダを生成
-            let msg = "<table><tr><th>name</th><th>effect</th></tr>";
-            // テーブルのテイラを生成
-            for (let j = 0; j < result.length; j++) {
-                // 各データを収めた表の列を生成
-                msg += "<tr>";
-                msg += "<td>" + result[j].name + "</td>";
-                msg += "<td class='num'>" + result[j].effect + "</td>";
-                msg += "</tr>";
-            }
-            msg += "</table>";
-            $("#message2").html(msg);
-        }
 
     </script>
 </head>
@@ -140,7 +130,6 @@
         <button class="btn" onclick="searchLevelGT()">Level &gt</button>
         <button class="btn" onclick="searchTribute()">Tribute</button>
         <button class="btn" onclick="effect()">Effect</button>
-        <button class="btn" onclick="reset()">Reset</button>
     </div>
     <div id="message">message area</div>
     <div id="message2">message2 area</div>
